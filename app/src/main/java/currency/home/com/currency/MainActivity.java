@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(ntd.getText().toString().matches("")){
                     new AlertDialog.Builder(MainActivity.this)
-                            .setMessage("Please enter your NTD amount")
-                            .setTitle("Problem")
+                            .setMessage(R.string.please_enter_ntd)
+                            .setTitle(R.string.problem)
                             .setPositiveButton("OK",null).show();
                 }
                 if(ntd.getText().toString().trim().length()>0){
                     new AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Result")
-                            .setMessage("Your USD is "+US_DollarExchange(Integer.parseInt(ntd.getText().toString())))
+                            .setTitle(R.string.result)
+                            .setMessage(getString(R.string.usd_is)+US_DollarExchange(Integer.parseInt(ntd.getText().toString())))
                             //.setMessage("Your USD is "+ 444)
                             .setPositiveButton("OK",null)
                             .show();
